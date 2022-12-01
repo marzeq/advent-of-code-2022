@@ -8,6 +8,7 @@ const main = async () => {
     part1: (input: string) => Awaitable<any>
     part2: (input: string) => Awaitable<any>
   }[] = [
+    await import("./days/day1/"),
   ]
 
   if (dayModules.length === 0) {
