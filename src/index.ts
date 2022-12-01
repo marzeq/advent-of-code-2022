@@ -5,8 +5,8 @@ type Awaitable<T> = T | Promise<T>
 
 const main = async () => {
   const dayModules: {
-    part1: (input: string) => Awaitable<number | null>
-    part2: (input: string) => Awaitable<number | null>
+    part1: (input: string) => Awaitable<any>
+    part2: (input: string) => Awaitable<any>
   }[] = [
   ]
 
