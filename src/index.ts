@@ -9,7 +9,7 @@ const main = async () => {
     part2: (input: string) => Awaitable<any>
   }[] = [
     await import("./days/day1/"),
-  ]
+  ].reverse()
 
   if (dayModules.length === 0) {
     console.error("There are no days to run yet!")
