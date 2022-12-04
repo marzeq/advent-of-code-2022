@@ -1,4 +1,5 @@
 const fs = require("node:fs")
+const child_process = require("node:child_process")
 
 const days = fs.readdirSync("src/days")
 
@@ -29,3 +30,5 @@ const lines = index.split("\n")
 lines.splice(10, 0, `    await import("./days/day${day}/"),`)
 
 fs.writeFileSync("src/index.ts", lines.join("\n"))
+
+child_process.exec(`xdg-open https://adventofcode.com/2022/day/${day}`)
