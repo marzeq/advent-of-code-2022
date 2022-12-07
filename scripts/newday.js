@@ -48,9 +48,9 @@ export const part2 = (input: string) => {
 
 	fs.writeFileSync("src/index.ts", lines.join("\n"))
 
-	if (os.platform() === "linux") child_process.exec(`xdg-open ${url}`)
-	else if (os.platform() === "darwin") child_process.exec(`open ${url}`)
-	else if (os.platform() === "win32") child_process.exec(`rundll32 url.dll,FileProtocolHandler ${url}`)
+	if (os.platform() === "linux") child_process.spawn("xdg-open", [url])
+	else if (os.platform() === "darwin") child_process.exec("open", [url])
+	else if (os.platform() === "win32") child_process.exec("rundll32" ["url.dll,FileProtocolHandler", url])
 }
 
 if (needToWait > 0) {
